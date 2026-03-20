@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0d1117 0%, #0f1a2e 50%, #0a1628 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* ── Page layout ── */
+.page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ── 3D viewport side ── */
+.viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+.labels {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.labels span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lbl-w { color: #3a7acc; }
+.lbl-O { color: #cc3a3a; }
+.lbl-C { color: #e8960a; }
+
+.info {
+  margin-top: 14px;
+  color: #8a9ab0;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.info b {
+  color: #c8d0dc;
+  font-weight: 500;
+}
+
+/* ── Control panel ── */
+.panel {
+  width: 260px;
+  flex-shrink: 0;
+  background: #1e2128;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-title {
+  color: #e8960a;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* ── Input fields ── */
+.field {
+  display: flex;
+  align-items: center;
+  background: #2e3240;
+  border-radius: 8px;
+  padding: 0 14px;
+  height: 48px;
+  gap: 8px;
+}
+
+.field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #c8d0dc;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.field input::placeholder {
+  color: #7a8494;
+}
+
+.unit {
+  color: #e8960a;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Buttons ── */
+.btn {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn:hover  { filter: brightness(1.12); }
+.btn:active { transform: scale(0.97); }
+
+.btn-orange {
+  background: #e8960a;
+  color: #fff;
+}
+
+
+/* ── Result box ── */
+.result-box {
+  background: #3a1e08;
+  border: 2px solid #e8960a;
+  border-radius: 8px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0d080;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ── Responsive: stack on small screens ── */
+@media (max-width: 760px) {
+  .page {
+    flex-direction: column;
+    align-items: center;
+  }
+  .panel {
+    width: 100%;
+    max-width: 400px;
+  }
+}
